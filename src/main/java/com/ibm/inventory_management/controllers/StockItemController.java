@@ -1,4 +1,5 @@
 package com.ibm.inventory_management.controllers;
+import java.io.IOException;
 import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +12,11 @@ public class StockItemController {
         this.service = service;
     }
     @GetMapping(path = "/stock-items", produces = "application/json")
-    public List<StockItem> listStockItems() {
-        return this.service.listStockItems();
+    public List<StockItem> listStockItems() throws Exception {
+	try {
+            return this.service.listStockItems();
+	} catch (IOException e) {
+	    throw new Exception("", e);
+	}
     }
 }

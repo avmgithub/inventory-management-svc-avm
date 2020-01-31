@@ -113,3 +113,5 @@ task copyJarToServerJar(type: Copy) {
 task run {
     dependsOn 'bootRun'
 }
+
+apply from:   'gradle/build-cloudant.gradle'

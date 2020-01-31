@@ -32,3 +32,6 @@ ingress:
   path: "/"
 
 #  tlsSecretName: ""
+
+cloudantBinding="binding-mooc-one-ocp-cloudant"
+databaseName="inventory-dev-avm"
